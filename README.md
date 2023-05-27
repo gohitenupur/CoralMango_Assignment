@@ -7,4 +7,12 @@ React Assignment-CoralMango Solutions Pvt Ltd
 npx create-react-app frontend
 npm install react-bootstrap bootstrap
 npm install react-router-dom
+
+// for build -  
+npm run build
+
+// for run the project -
+npm start
+
 ```
+
