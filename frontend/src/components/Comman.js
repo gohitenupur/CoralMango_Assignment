@@ -11,13 +11,13 @@ function Comman() {
     <div className="navbar-container">
       <ul className="navbar-list">
         <li className="navbar-item">
-          <a href="https://coralmango-frontend.onrender.com/card/table" className="navbar-link">Table</a>
+          <a href="/table" className="navbar-link">Table</a>
         </li>
         <li className="navbar-item">
-          <a href="https://coralmango-frontend.onrender.com/card/card" className="navbar-link">Card</a>
+          <a href="/card" className="navbar-link">Card</a>
         </li>
         <li className="navbar-item">
-          <a href="https://coralmango-frontend.onrender.com/card/es6-basics" className="navbar-link">ES6 Basics</a>
+          <a href="/es6-basics" className="navbar-link">ES6 Basics</a>
         </li>
         
       </ul>
