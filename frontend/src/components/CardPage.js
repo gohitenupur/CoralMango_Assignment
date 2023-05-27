@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Comman from './Comman';
+import './css/card.css';
+import IMG1 from "./img/person1.jfif"
+import IMG2 from "./img/person2.jfif"
+import IMG3 from "./img/person4.jpg"
+
+const imgData =[IMG1, IMG2, IMG3]
 
 const CardPage = () => {
   const [data, setData] = useState([]);
@@ -52,8 +58,9 @@ const CardPage = () => {
 
   return (
     <div>
-      <Comman/>
-      <h1>Results</h1>
+      <Comman />
+      <br />
+      <div className='container'>
       <input
         type="text"
         placeholder="Search by name"
@@ -66,20 +73,22 @@ const CardPage = () => {
           {isCardView ? 'Switch to Table View' : 'Switch to Card View'}
         </button>
       </div>
-      {isCardView ? (
+      <br/>
+      {!isCardView ? (
         <div className="card-list">
           {sortedData.map((item, index) => (
             <div className="card" key={index}>
-              <img src={item.image} alt="Person" />
+              <img src={imgData[index]} alt="Person" />
               <div className="card-details">
                 <h3>{item.name}</h3>
+                <h3>{item.occupation}</h3>
                 <p>{`${item.age} years`}</p>
               </div>
             </div>
           ))}
         </div>
       ) : (
-        <table>
+        <table className="data-table">
           <thead>
             <tr>
               <th onClick={() => handleSort('name')}>Name</th>
@@ -99,8 +108,8 @@ const CardPage = () => {
         </table>
       )}
     </div>
+    </div>
   );
 };
 
 export default CardPage;
-

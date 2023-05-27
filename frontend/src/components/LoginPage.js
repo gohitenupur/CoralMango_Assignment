@@ -13,7 +13,7 @@ function LoginPage({ onLogin }) {
 
     // Check if the entered credentials match the valid credentials
     if (username === 'demo@coralmango.com' && password === 'demo123') {
-      navigation("/comman");
+      navigation("/table");
     } else {
       // Set error message for invalid credentials
       setErrorMessage('Invalid Credentials!');
@@ -49,7 +49,9 @@ function LoginPage({ onLogin }) {
         </div>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
       </form>
+      <p>Login Credentials :- Username: demo@coralmango.com , Password: demo123</p>
     </div>
+
   );
 }
 

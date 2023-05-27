@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Comman from './Comman';
 
 const TableComponent = () => {
   const [data, setData] = useState([]);
@@ -46,7 +47,9 @@ const TableComponent = () => {
 
   return (
     <div>
-      <h1>Table</h1>
+      <Comman/>
+      <br/>
+      <div className="container">
       <input
         type="text"
         placeholder="Search by name"
@@ -54,24 +57,25 @@ const TableComponent = () => {
         onChange={handleSearch}
       />
       {isFiltered && <p>You are viewing filtered results!</p>}
-      <table>
-        <thead>
-          <tr>
-            <th onClick={() => handleSort('name')}>Name</th>
-            <th onClick={() => handleSort('age')}>Age</th>
-            <th>Occupation</th>
-          </tr>
-        </thead>
-        <tbody>
-          {sortedData.map((item, index) => (
-            <tr key={index}>
-              <td>{item.name}</td>
-              <td>{item.age}</td>
-              <td>{item.occupation}</td>
+      <table className="data-table">
+          <thead>
+            <tr>
+              <th onClick={() => handleSort('name')}>Name</th>
+              <th onClick={() => handleSort('age')}>Age</th>
+              <th>Occupation</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {sortedData.map((item, index) => (
+              <tr key={index}>
+                <td>{item.name}</td>
+                <td>{item.age}</td>
+                <td>{item.occupation}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+    </div>
     </div>
   );
 };
